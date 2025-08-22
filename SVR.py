@@ -5,6 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 from sklearn.svm import SVR
 
+data = pd.read_csv("S_Saipa.csv")
 np.random.seed(42)
 num_data_points = 100
 days = np.arange(1, num_data_points + 1)
