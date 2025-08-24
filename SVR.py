@@ -5,11 +5,17 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 from sklearn.svm import SVR
 
-data = pd.read_csv("S_Saipa.csv")
 np.random.seed(42)
 num_data_points = 100
 days = np.arange(1, num_data_points + 1)
-prices = 100 + np.cumsum(np.random.randn(num_data_points))
+r = np.random.randn(num_data_points)
+prices = 100 + np.cumsum(r)
 
 data = pd.DataFrame({"days" : days,
                      "prices" : prices})
+
+
+data["prices"] = data["prices"].astype(float)
+
+X = data["Days"]  #attribute
+y = data["prices"] #goal variable
